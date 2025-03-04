@@ -137,76 +137,67 @@ position: relative;
 }
 
 /* -----------  vision Mission ------------------- */
-.vm-headers {
-  text-align: center;
-  margin-top: 5rem;
-  margin-bottom: 1rem;
+ .tab-main-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 3rem;
+        }
+ .tab-container {
+            text-align: center;
+            padding: 10px;
+        }
+        .tab-flex-container{
+            display: flex;
+            text-align: left;
+        }
+        .tab-img img {
+  width: 100%;
+  height: auto;
 }
 
-button {
-  background-color: rgb(61, 188, 252);
-  border-radius: 5px;
-  border-color: rgb(61, 188, 252);
-  padding: 10px;
-}
-.vision-container ,.mission-container   {
-  display: flex;
-  
-}
-.Vision-paragraph , .mission-paragraph {
-  text-align: left;
-  width: 70%;
-  position: relative;
-}
-.Vision-paragraph h2::after {
-  content: "";
-  position: absolute;
-  width: 100px;
-  height: 3px;
-  background: #0a2e4e;
-  left: 2px;
-  top: 50px;
 
-}
-.mission-paragraph h2::after {
-  content: "";
-  position: absolute;
-  width: 100px;
-  height: 3px;
-  background: #0a2e4e;
-  left: 2px;
-  top: 50px;
- 
-}
-.Vision-paragraph h2::before {
-  content: "";
-  position: absolute;
-  width: 50px;
-  height: 3px;
-  background: #0a2e4e;
-  left: 2px;
-  top: 60px;
-}
-.mission-paragraph h2::before {
-  content: "";
-  position: absolute;
-  width: 50px;
-  height: 3px;
-  background: #0a2e4e;
-  left: 2px;
-  top: 60px;
-}
+        .tab-button {
+            flex: 1;
+            padding: 12px;
+            font-size: 16px;
+            font-weight: bold;
+            background: transparent;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s, color 0.3s;
+        }
 
-.vision-img 
-img {
-  width: 399px;
-  height: 300px;
-}
-.mission.img img{
-  width: 399px;
-  height: 300px;
-  padding: 15px;
-}
+        .active {
+            background: #0251a4;
+            color: white;
+        }
+
+        .tab-content {
+            display: none;
+            font-size: 18px;
+            padding: 15px;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        .show {
+            display: block;
+        }
+        
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
 
 /*----------------- know the properitor ---------- */
 .properitor {
@@ -418,6 +409,16 @@ hr {
   left: 50px;
   
 }
+/* tab switching */
+    .tab-flex-container{
+            display: flex;
+            flex-direction: column;
+        }
+        .tab-img img {
+  width: 100%;
+  height: auto;
+}
+/* properitor */
 
 .about-us, .Vision-Mission, .properitor{
   flex-direction: column;
@@ -425,13 +426,6 @@ hr {
 .about-us-img, .description, .left-side, .right-side {
   flex: 1 1 100%;
 }
-.vision-container ,.mission-container   {
-  display: flex;
-  flex-direction: column;
-}
-.Vision-paragraph , .mission-paragraph {
-  text-align: left;
-  width: 100%;
-}
+
 }
 

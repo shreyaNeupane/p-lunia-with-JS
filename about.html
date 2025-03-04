@@ -52,19 +52,21 @@
             </div>
             </div>
             <!--  -----Vison/Mission----------------- -->
-              <div class="Vision-Mission">
-                <div class="vm-headers">
-   <h2>Our Vision and Mission</h2>
-              <div class="btn">
-               <button id="vision">Vision</button>
-              <button id="mission">Mission</button>
-              </div>     
-              <!-- Vision section -->
-              
-              <div class="vision-container">
-              <div class="Vision-paragraph">
-                <h2>Vision</h2>
-                 <p>
+              <div class="tab-main-container">
+               <div class="tab-container">
+                <h2>Our Vision and Mission</h2>
+        <div class="tab-buttons">
+            <button id="vision-btn" class="tab-button active" onclick="switchTab('vision')">Vision</button>
+            <button id="mission-btn" class="tab-button" onclick="switchTab('mission')">Mission</button>
+        </div>
+
+        <div id="vision" class="tab-content show">
+            <h2>Our Vision</h2>
+            <div class="tab-flex-container">
+            <div class="tab-img">
+                <img src="images/about/vision.png" alt="vision">
+              </div>
+              <p>
                 
             Pioneering sustainable practices for a better tomorrow.<br>
             - Leading the Industry: Aspire to be a recognized leader in accounting and financial services.<br>
@@ -73,20 +75,15 @@
             - Sustainable Growth: Promote sustainable business practices that benefit clients, employees, and the environment.<br>
             - Empowering Clients: Enable clients to achieve their financial goals through expert guidance and support.<br>
               </p>
-              </div>
-              <div class="vision-img">
-                <img src="images/about/vision.png" alt="vision">
-              </div>
-             </div>
-             <!-- mission section -->
-                <div class="mission-container">
               
-                 <div class="mission-img">
-                <img src="images/about/mission.png" alt="mission">
-              </div>
-               <div class="mission-paragraph">
-                    <h2>Mission</h2>
-                     <p>
+        </div>
+        </div>
+
+        <div id="mission" class="tab-content ">
+          <h2>Our Mission</h2>
+          <div class="tab-flex-container">
+            
+             <p>
 Building lasting relationships through exceptional service.<br>
 
 - Integrity and Ethics: Uphold the highest standards of integrity and professionalism in all services.<br>
@@ -95,15 +92,13 @@ Building lasting relationships through exceptional service.<br>
 - Continuous Improvement: Foster a culture of ongoing learning and development for staff and clients.<br>
 - Community Impact: Contribute positively to the communities served through ethical practices and corporate responsibility.<br>
                 </p>
-                </div>
-            </div>
+                 <div class="tab-img">
+                <img src="images/about/mission.png" alt="mission">
+              </div>
         </div>
-             
-
-
-
-              
-            
+    </div>
+      </div>
+    </div>
               <!-- --------------know the properitor -->
                <div class="properitor">
                 <div class="properitor-img">
@@ -171,10 +166,33 @@ Building lasting relationships through exceptional service.<br>
         </footer>
         
           <script>
+            // navbar
           function myFunction() {
             var x = document.getElementById("menu");
             x.classList.toggle("show");
           }
+          //tabswitching vision mission
+          
+        function switchTab(tabId) {
+    
+            const contents = document.querySelectorAll('.tab-content');
+            const buttons = document.querySelectorAll('.tab-button');
+
+            // Remove "show" class from all tab contents
+            for (const content of contents) {
+                content.classList.remove("show");
+            }
+
+            // Remove "active" class from all buttons
+            for (const button of buttons) {
+                button.classList.remove("active");
+            }
+
+            // Add "show" class to selected tab and "active" class to the button
+            document.getElementById(tabId).classList.add("show");
+            document.getElementById(tabId + "-btn").classList.add("active");
+        }
+    
         </script>
         
         
