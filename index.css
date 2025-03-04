@@ -59,43 +59,34 @@ body {
   border-right: 1px solid #f1fbff;
 }
 /* -----------navbar ------------- */
-/* ------------navbar------------------- */
-
-nav {
-  height: 80px;
-  width: 100%;
-  background-color: rgb(1, 1, 87);
-  width: 100%;
-}
-nav ul {
-  list-style-type: none;
-  float: right;
-  margin-right: 20px;
-}
-nav ul li {
-  display: inline-block;
-  line-height: 50px;
-  margin: 0 5px;
-}
-nav ul li a {
-  color: white;
-  font-size: 17px;
-}
-a.active,
-a:hover {
-  color: lightblue;
-}
-.checkbtn {
-  font-size: 30px;
-  color: white;
-  float: right;
-  line-height: 80px;
-  margin-right: 40px;
-  cursor: pointer;
+.navbar{
+  height: 70px;
+      background-color: rgb(1, 1, 87);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      top: 0;
+       position: sticky; /* Ensure it's visible */
+    z-index: 1000; 
+     }
+     #menu a{
+      /* display: flex; */
+     text-decoration: none;
+      color: white;
+      padding: 10px;
+      transition: all .3s;
+     }
+     #menu a:hover{
+      color: rgb(80, 80, 254);
+     }
+     .hamburger i{
+     
   display: none;
-}
-#check {
-  display: none;
+  position: absolute;
+  align-items: center;
+  right: 20px;
+  top: 30px;
 }
 /*----------------- Main contents -------------------------- */
 /* home slider */
@@ -389,9 +380,6 @@ hr {
 }
 /* inside right-side h3,p,form-control etc css */
 .right-side {
-  /* flex grow- container will grow its size if there is space
-  | flex shrink - container will shrink itself in absence of space
-   flex bais - rewrites width of container and  sets  width of container */
   flex: 1 1 400px;
   h3 {
     position: relative;
@@ -440,7 +428,6 @@ hr {
 
 /* ----------------- Media query------------------- */
 /*  ----------------- navbar( media query) */
-/* ----------------- Media query------------------- */
 @media (max-width: 992px) {
   .header {
     display: none;
@@ -449,62 +436,52 @@ hr {
     font-family: 30px;
     padding-left: 50px;
   }
-  nav ul li a {
-    font-size: 16px;
-  }
+ 
 }
 @media (max-width: 858px) {
-  .header {
-    display: none;
-  }
-  .checkbtn {
-    display: block;
-    font-size: 20px;
-  }
-
-  ul {
-    box-sizing: border-box;
-
-    margin-top: 0;
-    z-index: 100;
-    position: fixed;
-    width: 100%;
-    background-color: rgb(1, 1, 87);
-    top: 80px;
-    left: -100%;
-    /* text-align: center; */
-    transition: all 0.5s;
-  }
-  nav ul li {
-    /* z-index: 100; */
-    display: block;
-    margin: 50px 0;
-    line-height: 10px;
-  }
-  nav ul li a {
-    font-size: 18px;
-  }
-  a:hover,
-  a.active {
-    background: none;
-    color: lightblue;
-  }
-  #check:checked ~ ul {
-    left: 0;
-  }
 }
+
+ 
 /* media query */
 /* ------sevice (media query)-------- */
+
 @media (max-width: 1024px) {
   .services {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
-@media (max-width: 768px) {
+    @media (max-width: 767px) {
+      .hamburger{
+         background-color: rgb(1, 1, 87);
+      }
+        .hamburger i {
+        display: block;
+    }
+    #menu {
+        display: none; /* Ensure menu is initially hidden */
+        flex-direction: column;
+        width: 100%; /* Make menu full-width */
+        background-color: rgb(1, 1, 87); /* Match navbar color */
+        position: absolute;
+        top: 50px; /* Adjust based on navbar height */
+        left: 0px;
+        font-size: 1.1rem;
+    }
+    #menu.show {
+        display: flex; /* Ensure flex layout when shown */
+    }
+    #menu a {
+        display: block;
+        padding: 15px;
+        text-align: center;
+    }
+
+
   .services {
     grid-template-columns: repeat(2, 1fr);
   }
+
 }
 
 @media (max-width: 600px) {

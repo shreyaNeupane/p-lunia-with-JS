@@ -51,7 +51,6 @@ body {
 #in {
   padding: 5px 13px;
   border-left: 1px solid #f1fbff;
-  /* border-right: 1px solid none; */
 }
 #insta {
   padding: 5px 15px;
@@ -59,44 +58,34 @@ body {
   border-right: 1px solid #f1fbff;
 }
 /* -------navbar --------- */
-
-nav {
-  height: 80px;
-  width: 100%;
-  background-color: rgb(1, 1, 87);
-  width: 100%;
- 
-}
-nav ul {
-  list-style-type: none;
-  float: right;
-  margin-right: 20px;
-}
-nav ul li {
-   display: inline-block;
-   line-height: 50px;
-   margin: 0 5px;
-}
-nav ul li a{
-  color: white;
-  font-size: 17px;
-}
-a.active,a:hover{
-  color: lightblue;
-}
-.checkbtn{
-  font-size: 30px;
-  color: white;
-  float: right;
-  line-height: 80px;
-  margin-right: 40px;
-  cursor: pointer;
-  display:none;
-}
-#check{
+.navbar{
+  height: 70px;
+      background-color: rgb(1, 1, 87);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      top: 0;
+       position: sticky; 
+    z-index: 1000; 
+     }
+     #menu a{
+     text-decoration: none;
+      color: white;
+      padding: 10px;
+      transition: all .3s;
+     }
+     #menu a:hover{
+      color: rgb(80, 80, 254);
+     }
+     .hamburger i{
+     
   display: none;
+  position: absolute;
+  align-items: center;
+  right: 20px;
+  top: 30px;
 }
-
 
 /* -------------- Container ------------- */
 .service-container {
@@ -299,40 +288,34 @@ hr {
    .header {
     display: none;
   }
-  .checkbtn{
-    display: block;
-    font-size: 20px;
-    
+  
   }
- 
-  ul{
+@media (max-width: 767px){
+   .hamburger{
+         background-color: rgb(1, 1, 87);
+      }
+        .hamburger i {
+        display: block;
+    }
+    #menu {
+        display: none; /* Ensure menu is initially hidden */
+        flex-direction: column;
+        width: 100%; /* Make menu full-width */
+        background-color: rgb(1, 1, 87); /* Match navbar color */
+        position: absolute;
+        top: 50px; /* Adjust based on navbar height */
+        left: 0px;
+        font-size: 1.1rem;
+    }
+    #menu.show {
+        display: flex; /* Ensure flex layout when shown */
+    }
+    #menu a {
+        display: block;
+        padding: 15px;
+        text-align: center;
+    }
 
-    box-sizing: border-box;
 
-    margin-top: 0;
-    z-index: 100;
-    position: fixed;
-    width: 100%;
-    background-color:rgb(1, 1, 87); 
-    top: 80px;
-    left: -100%;
-    /* text-align: center; */
-    transition: all .5s;
-  }
-  nav ul li{
-    /* z-index: 100; */
-    display: block;
-    margin: 50px 0;
-    line-height: 10px;
-  }
-  nav ul li a{
-    font-size: 18px;
-  }
-   a:hover,a.active{
-    background: none;
-    color: lightblue;
-  }
-  #check:checked ~ul{
-    left:0;
-  }
 }
+ 

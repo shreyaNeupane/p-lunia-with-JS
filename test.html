@@ -4,9 +4,106 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://kit.fontawesome.com/9455c2d4f3.js" crossorigin="anonymous"></script>
 </head>
+   <style>
+    body{
+      margin: 0;
+      padding: 0;
+    }
+     .navbar{
+      background-color: rgb(105, 105, 255);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+     }
+     .logo{
+      font-weight: bold;
+      font-size: 2rem;
+      color: rgb(49, 49, 49);
+      text-decoration: none;
+     }
+     #menu a{
+      /* display: flex; */
+     text-decoration: none;
+      color: white;
+      padding: 10px;
+      transition: all .3s;
+     }
+     a:hover{
+      background-color: rgb(80, 80, 254);
+
+     }
+     .hamburger i{
+     
+  display: none;
+  position: absolute;
+  align-items: center;
+  right: 20px;
+  top: 10px;
+
+     }
+     /* @media (max-width: 767px) {
+         .hamburger i{
+          display: block;
+         }
+         #menu {
+         
+          flex-direction: column;
+          flex-direction: column;
+         }
+         #menu.show{
+          display: block;
+         }
+     } */
+      @media (max-width: 767px) {
+        
+    .hamburger i {
+        display: block;
+    }
+    #menu {
+        display: none; /* Ensure menu is initially hidden */
+        flex-direction: column;
+        width: 100%; /* Make menu full-width */
+        background-color: rgb(105, 105, 255); /* Match navbar color */
+        position: absolute;
+        top: 30px; /* Adjust based on navbar height */
+        left: 0px;
+        font-size: 1.5rem;
+    }
+    #menu.show {
+        display: flex; /* Ensure flex layout when shown */
+    }
+    #menu a {
+        display: block;
+        padding: 15px;
+        text-align: center;
+    }
+}
+
+
+   </style>
 <body>
-    <p>hello</p>
-    <p>world</p>
+      <div class="navbar">
+        <a href="#" class="logo">LOGO</a>
+        <div class="hamburger"><i class="fa-solid fa-bars" onclick="myFunction()"></i> </div>
+        <div id="menu">
+           <a href="#">HOME</a>
+            <a href="#">ABOUT</a>
+             <a href="#">CONTACT</a>
+              <a href="#">SERVICES</a>
+        </div>
+      </div>
+
+      <script>
+
+  function myFunction() {
+    //  document.getElementById("menu").classList.toggle("show");
+  var x = document.getElementById("menu");
+  x.classList.toggle("show");
+}
+
+</script>
 </body>
 </html>

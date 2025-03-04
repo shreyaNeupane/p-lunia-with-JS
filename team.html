@@ -25,21 +25,16 @@
             </span>
         </header>
         <!-- ----------------Navbar ---------------- -->
-        <nav>
-                <input type="checkbox"  id="check">
-                <label for="check" class="checkbtn">
-                     <i class="fa-solid fa-bars"></i>
-                </label>
-            <ul>
-            <li><a href="index.html">HOME</a></li>
-            <li><a href="about.html">ABOUT</a></li>
-           <li> <a href="service.html">SERVICE</a></li>
-           <li> <a href="team.html">TEAM</a></li>
-            <li><a href="contact-page.html">CONTACT</a></li>
-            </ul>
-        
-
-        </nav>
+         <div class="navbar">
+       <div class="hamburger"><i class="fa-solid fa-bars" onclick="myFunction()"></i> </div>
+        <div id="menu">
+          <a href="index.html">HOME</a>
+          <a href="about.html">ABOUT</a>
+           <a href="service.html">SERVICE</a>
+           <a href="team.html">TEAM</a>
+          <a href="contact-page.html">CONTACT</a>
+        </div>
+      </div>
         <!-- -------------BODY ------------------>
          <div class="team-main-container">
     <div class="team-container">
@@ -186,7 +181,12 @@
         </div>
         </div>
         </footer>
-        
+         <script>
+          function myFunction() {
+            var x = document.getElementById("menu");
+            x.classList.toggle("show");
+          }
+        </script>
          
         
         

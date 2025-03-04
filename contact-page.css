@@ -32,8 +32,6 @@ body {
 #fb,
 #in {
   padding: 5px 13px;
-  /* border-left: 1px solid black; */
-  /* border-right: 1px solid none; */
 }
 #insta {
   padding: 5px 15px;
@@ -50,7 +48,6 @@ body {
 #in {
   padding: 5px 13px;
   border-left: 1px solid #f1fbff;
-  /* border-right: 1px solid none; */
 }
 #insta {
   padding: 5px 15px;
@@ -58,41 +55,33 @@ body {
   border-right: 1px solid #f1fbff;
 }
 /* -----------   navabar ------------------- */
-
-nav {
-  height: 80px;
-  width: 100%;
-  background-color: rgb(1, 1, 87);
- 
-}
-nav ul {
-  list-style-type: none;
-  float: right;
-  margin-right: 20px;
-}
-nav ul li {
-   display: inline-block;
-   line-height: 50px;
-   margin: 0 5px;
-}
-nav ul li a{
-  color: white;
-  font-size: 17px;
-}
-a.active,a:hover{
-  color: lightblue;
-}
-.checkbtn{
-  font-size: 30px;
-  color: white;
-  float: right;
-  line-height: 80px;
-  margin-right: 40px;
-  cursor: pointer;
-  display:none;
-}
-#check{
+.navbar{
+  height: 70px;
+      background-color: rgb(1, 1, 87);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      top: 0;
+       position: sticky; 
+    z-index: 1000; 
+     }
+     #menu a{
+     text-decoration: none;
+      color: white;
+      padding: 10px;
+      transition: all .3s;
+     }
+     #menu a:hover{
+      color: rgb(80, 80, 254);
+     }
+     .hamburger i{
+     
   display: none;
+  position: absolute;
+  align-items: center;
+  right: 20px;
+  top: 30px;
 }
 
 /* ----------------------contents-------------------- */
@@ -342,6 +331,33 @@ hr {
 }
 /* Media Query for Smaller Screens */
 @media (max-width: 767px) {
+  /*----------- navbar media query -------------- */
+   .hamburger{
+         background-color: rgb(1, 1, 87);
+      }
+        .hamburger i {
+        display: block;
+    }
+    #menu {
+        display: none; /* Ensure menu is initially hidden */
+        flex-direction: column;
+        width: 100%; /* Make menu full-width */
+        background-color: rgb(1, 1, 87); /* Match navbar color */
+        position: absolute;
+        top: 50px; /* Adjust based on navbar height */
+        left: 0px;
+        font-size: 1.1rem;
+    }
+    #menu.show {
+        display: flex; /* Ensure flex layout when shown */
+    }
+    #menu a {
+        display: block;
+        padding: 15px;
+        text-align: center;
+    }
+
+
   .body-content {
     flex-direction: column;
     
